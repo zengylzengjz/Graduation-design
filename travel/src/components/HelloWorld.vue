@@ -1,113 +1,50 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+  <slider :pages="pages" :sliderinit="sliderinit">
+    <!-- slot  -->
+  </slider>
 </template>
-
 <script>
+import slider from 'vue-concise-slider'// 引入slider组件
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  //  el: '#app',
+   data () {
+      return {
+        //图片列表[arr]
+        pages:[
+          {
+            title: '',
+            style:{
+             background:'url(src/img/testimg-1.jpg)'
+            }
+          },
+          {
+           title: '',
+           style:{
+            background:'url(src/img/testimg-2.jpg)'
+            }
+          },
+          {
+            title: 'slide3',
+            style:{
+              background:'#4bbfc3',
+            },
+          }
+        ],
+        //滑动配置[obj]
+        sliderinit: {
+          currentPage: 0,//当前页码
+          thresholdDistance: 500,//滑动判定距离
+          thresholdTime: 100,//滑动判定时间
+          autoplay:1000,//自动滚动[ms]
+          loop:true,//循环滚动
+          direction:'vertical',//方向设置，垂直滚动
+          infinite:1,//无限滚动前后遍历数
+          slidesToScroll:1,//每次滑动项数
+        }
+      }
+    },
+    components: {
+        slider
     }
-  }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
