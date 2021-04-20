@@ -31,6 +31,7 @@ export default {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
             if(scrollTop>81){
                 this.iscolor=true;
+                // console.log(scrollTop);
             }
             else{
                 this.iscolor=false;
@@ -41,12 +42,15 @@ export default {
 </script>
 <style scoped lang="less">
 .header{
+    z-index: 100;
     width: 100%;
     height: 80px;
     background-color:transparent;
     position: fixed;
+    top: 0;
+    left: 0;
     &.iscolor{
-        background-color:#23203D;
+        background-color:#849AAD;
         transition: all .5s ease 0s;
     }
     .layout{
