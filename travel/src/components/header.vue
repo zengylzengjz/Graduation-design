@@ -1,7 +1,8 @@
 <template>
-    <div class="header" :class="[iscolor?'iscolor':'']">
+    <div class="header" :class="[istrue?'iscolor':'']">
         <div class="layout">
-            <div class="logo">logo</div>
+            <div class="logo"></div>
+            <div class="font">Travel</div>
             <div class="list">
                 <div class="dec" v-for="(item,index) in ClickList" :key="index">
                     <div>{{item}}</div>
@@ -14,14 +15,18 @@
 </template>
 <script>
 export default {
-    props: ['ClickList'],
+    props: ['Iscolor','Status'],
     data(){
         return {
-            iscolor:false,
+            // Iscolor:this.Iscolor,
+            istrue:this.Iscolor,
+            ClickList:["主页","景点","酒店","分享","攻略","关于"],
         }
     },
     mounted(){
+        if(!this.Status){
         window.addEventListener('scroll', this.handleScroll);
+        }
     },
     created(){
         // console.log(this.ClickList,"ClickList")
@@ -30,11 +35,11 @@ export default {
         handleScroll(){
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
             if(scrollTop>81){
-                this.iscolor=true;
+                this.istrue=true;
                 // console.log(scrollTop);
             }
             else{
-                this.iscolor=false;
+                this.istrue=false;
             }
         }
     }
@@ -59,8 +64,20 @@ export default {
         color: white;
         height: 80px;   //不继承高度
         margin:0 2%;
-        .logo{
-
+        // .logo{
+        //     margin-left: 30px;
+        //     background-image: url(../assets/logogo.png);
+        //     width: 70px;
+        //     height: 70px;
+        //     background-size: 100% 100%;
+        //     margin-top: 10px;
+        // }
+        .font{
+            color: white;
+            font-size: 24px;
+            align-self: center;
+            // padding: 10px 0 0 10px;
+            font-family:'Times New Roman', Times, serif;
         }
         .list{
             display: flex;

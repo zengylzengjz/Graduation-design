@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '../pages/index'
 import HelloWorld from '../components/HelloWorld'
+import destination from '../pages/destination'
+import scenic from '../pages/scenic'
 
 
 Vue.use(Router)
@@ -14,9 +16,14 @@ export default new Router({
       component: index
     },
 {
-  path: '/HelloWorld',
-      name: 'HelloWorld',
-      component: HelloWorld
+  path: '/destination',
+      name: 'destination',
+      component: destination
+},
+{
+  path: '/scenic',
+      name: 'scenic',
+      component: scenic
 }
   ]
 })

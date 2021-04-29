@@ -1,10 +1,14 @@
 <template>
 <div>
-    <Header :ClickList="ClickList"/>
+    <Header :Iscolor="Iscolor" :Status="Status"/>
     <Banner :BannerList="BannerList"/>
     <Provide :ProvideList="ProvideList"/>
     <Destination :DestinationList="destinationList"/>
     <Hotel :HotelList="HotelList"/>
+    <Share :ShareList="ShareList"/>
+    <Guides :GuidesList="GuidesList"/>
+    <About :AboutList="AboutList"/>
+    <Footer />
 </div>
 
 
@@ -13,14 +17,20 @@
 <script>
 import Header from "../components/header"
 import Banner from "../components/banner"
-import Footer from "../components/footer"
 import Provide from "../components/provide"
 import Destination from "../components/destination"
 import Hotel from "../components/hotel"
+import Share from "../components/share"
+import Guides from "../components/guides"
+import About from "../components/about"
+import Footer from "../components/footer"
+
 export default {
     data(){
         return{
-            ClickList:["主页","景点","酒店","分享","攻略","关于"],
+            Iscolor:false,
+            Status:false,
+            // ClickList:["主页","景点","酒店","分享","攻略","关于"],
             BannerList:[
                 {
                     show_image: "http://zengyl.dev.dxdc.net/travel_pic/pic/7.jpg",
@@ -113,47 +123,156 @@ export default {
                     {
                         img:"http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg",
                         name:"Bailian Resort Hotel",
-                        price:"2800",
-                        start:5,
+                        price:"From ¥2800",
+                        star:5,
                         addr:"Chongqing",
                     },
                     {
                         img:"http://zengyl.dev.dxdc.net/travel_pic/pic/hotel2.jpg",
                         name:"Banyan Tree",
-                        price:"2000",
-                        start:4,
+                        price:"From ¥2000",
+                        star:4,
                         addr:"Jiuzhaigou",
                     },
                     {
                         img:"http://zengyl.dev.dxdc.net/travel_pic/pic/hotel3.jpg",
                         name:"Phoenix Island Resort Hotel",
-                        price:"1800",
-                        start:5,
+                        price:"From ¥1800",
+                        star:5,
                         addr:"Sanya",
                     },
                     {
                         img:"http://zengyl.dev.dxdc.net/travel_pic/pic/hotel4.jpg",
                         name:"Puxiu Snow Mountain Hotel",
-                        price:"2200",
-                        start:4,
+                        price:"From ¥2200",
+                        star:4,
                         addr:"Lijiang",
-                    },
-                    {
-                        img:"http://zengyl.dev.dxdc.net/travel_pic/pic/hotel5.jpg",
-                        name:"Hilton Bali Resort",
-                        price:"1200",
-                        start:4,
-                        addr:"Bali",
                     },
                     {
                         img:"http://zengyl.dev.dxdc.net/travel_pic/pic/hotel6.jpg",
                         name:"Baiyoke Sky Hotel",
-                        price:"800",
-                        start:3,
+                        price:"From ¥800",
+                        star:3,
                         addr:"Bangkok",
                     },
+                    {
+                        img:"http://zengyl.dev.dxdc.net/travel_pic/pic/hotel5.jpg",
+                        name:"Hilton Bali Resort",
+                        price:"From ¥1200",
+                        star:4,
+                        addr:"Bali",
+                    },
                 ]
+        },
+        ShareList: {
+            sharetop:"Hot Share",
+            shareTitle:"What Our Relaxed Customers Share About Travel",
+            list:[
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/1.jpg",
+                    title:"",
+                    content:"Sapiente dolorum distinctio facere quod ipsam doloremque dignissimos blanditiis soluta est accusamus corporis rerum veritatis nisi! Harum, tenetur minima soluta.",
+                    city:"",
+                    username:"zeng zeng zeng",
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/2.jpg",
+                    title:"",
+                    content:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Praesent bibendum dolor eros imperdiet amet hendrerit.",
+                    city:"",
+                    username:"Rachel",
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/3.jpg",
+                    title:"",
+                    content:"",
+                    city:"",
+                    username:"zeng zeng zeng",
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/4.jpg",
+                    title:"",
+                    content:"",
+                    city:"",
+                    username:"zeng zeng zeng",
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/5.jpg",
+                    title:"",
+                    content:"",
+                    city:"",
+                    username:"zeng zeng zeng",
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/6.jpg",
+                    title:"",
+                    content:"",
+                    city:"",
+                    username:"zeng zeng zeng",
+                },
+            ]
+        },
+        GuidesList:{
+            GuideTitle:"TRIP IDEAS",
+            GuideTitle_min:"Trip Ideas",
+            GuideDescription:"Not sure where to go next? We’ve got everything you need to inspire your next great getaway, from long weekend escapes in the U.S. to must-see cities in Europe to bucket-list adventures in Asia and beyond. Get packing.",
+            GuideImg:"http://zengyl.dev.dxdc.net/travel_pic/pic/banner1.jpg",
+            list:[
+            {
+                theme:"The Coolest Things to Do in Chongqing Now,How relaxing it is",
+                theme_img:"http://zengyl.dev.dxdc.net/travel_pic/pic/1.jpg",
+                theme_copy:"",
+                day:5,
+                price:"¥8800"
+            },
+            {
+                theme:"11 Gorgeous Places in India That Have to Be Seen to Be Believed",
+                theme_img:"http://zengyl.dev.dxdc.net/travel_pic/pic/2.jpg",
+                theme_copy:"",
+                day:4,
+                price:"¥7600"
+            },
+            {
+                theme:"The Coolest Things to Do in Chongqing Now",
+                theme_img:"http://zengyl.dev.dxdc.net/travel_pic/pic/3.jpg",
+                theme_copy:"",
+                day:7,
+                price:"¥12800"
+            },
+        ]
+        },
+        AboutList:{
+            aboutTop:"About us",
+            aboutTitle:"Frequently Asked Questions",
+            list:[
+                {
+                    question:" Low Cost service is available or not ?",
+                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    showcontent:false,
+                },
+                {
+                    question:"Low Cost service is available or not ?",
+                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    showcontent:false,
+                },
+                {
+                    question:"Low Cost service is available or not ?",
+                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    showcontent:false,
+                },
+                {
+                    question:"Low Cost service is available or not ?",
+                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    showcontent:false,
+                },
+                {
+                    question:"Low Cost service is available or not ?",
+                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    showcontent:false,
+                }
+            ]
         }
+        
         }
     },
   components:{
@@ -162,7 +281,10 @@ export default {
       Footer,
       Provide,
       Destination,
-      Hotel
+      Hotel,
+      Share,
+      Guides,
+      About,
         },
     mounted(){
     }
