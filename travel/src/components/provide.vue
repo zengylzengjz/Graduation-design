@@ -26,12 +26,13 @@ export default {
 <style scoped lang="less">
 .provides{
     margin-top: 60px;
-    text-align: center;
     .title{
+        text-align: center;
         font-size: 50px;
         margin-bottom: 20px;
     }
     .content{
+        text-align: center;
         margin-top: 30px;
         padding:0 20% 2% 20%;
         color: #757575;

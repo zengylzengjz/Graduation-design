@@ -77,7 +77,7 @@ export default {
 </script>
 <style scoped lang="less">
 .guides{
-    padding: 0 5%;
+    padding: 7% 5% 0 5%;
     .banner{  
     height: 340px;
     background-size:100% 100%;

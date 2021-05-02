@@ -73,6 +73,7 @@ export default {
         font-size: 26px;
         color: #508784;
         padding-bottom: 20px;
+        text-decoration: underline;
     }
     .dec{
         display: flex;

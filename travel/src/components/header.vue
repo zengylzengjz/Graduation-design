@@ -2,7 +2,7 @@
     <div class="header" :class="[istrue?'iscolor':'']">
         <div class="layout">
             <div class="logo"></div>
-            <div class="font">Travel</div>
+            <div class="font" @click="goIndex">Travel</div>
             <div class="list">
                 <div class="dec" v-for="(item,index) in ClickList" :key="index">
                     <div>{{item}}</div>
@@ -41,6 +41,12 @@ export default {
             else{
                 this.istrue=false;
             }
+        },
+        goIndex(){
+            this.$router.push({
+            name: 'index',
+            params: {},
+      })
         }
     }
 }
@@ -78,6 +84,7 @@ export default {
             align-self: center;
             // padding: 10px 0 0 10px;
             font-family:'Times New Roman', Times, serif;
+            cursor: pointer;
         }
         .list{
             display: flex;

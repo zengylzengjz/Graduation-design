@@ -102,7 +102,7 @@ export default {
         .title{
             color: white;
             font-weight: 800;
-            font-size: 40px;
+            font-size: 30px;
             span{
                 color: #A6DFFA;
             }
@@ -126,7 +126,7 @@ export default {
         .title{
             color: white;
             font-weight: 800;
-            font-size: 40px;
+            font-size: 30px;
             margin-bottom: 10px;
         }
         .content{
@@ -157,12 +157,12 @@ export default {
         .title{
             color: white;
             font-weight: 800;
-            font-size: 36px;
+            font-size: 28px;
             margin-bottom: 10px;
             display: flex;
             flex-direction: column;
             &.two{
-                font-size: 28px;
+                font-size: 24px;
             }
         }
         .content{

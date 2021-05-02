@@ -4,7 +4,7 @@
         <div class="line"></div>
         <div class="city">{{city}}</div>
         <Search :SearchList="SearchList2"/>
-        
+        <Scenic :ScenicList="ScenicList"/>
         <!-- <Sort /> -->
         <Footer />
 
@@ -14,6 +14,7 @@
 import Header from "../components/header"
 import Footer from "../components/footer"
 import Search from "../components/search"
+import Scenic from "../components/scenic"
 // import Sort from "../components/sort"
 export default {
     data(){
@@ -26,7 +27,47 @@ export default {
             },
             city:'',
             ScenicList:[
-
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/6.jpg",
+                    title:"重庆长江索道",
+                    description:"万里长江的一条空中走廊，俯瞰滚滚长江",
+                    money:"¥50",
+                    level:"4A景区",
+                    comment:"--4条评论",
+                    address:"重庆市渝中区新华路151号",
+                    addr:"地址：",
+                    time:"7:30~22:30",
+                    timeme:"开放时间：",
+                    ticket:"88",
+                    ticketet:"剩余票数：",
+                    qty:"购买数量",
+                    buy:"立即预定"
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/5.jpg",
+                    title:"",
+                    description:""
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/4.jpg",
+                    title:"",
+                    description:""
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/3.jpg",
+                    title:"",
+                    description:""
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/2.jpg",
+                    title:"",
+                    description:""
+                },
+                {
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/1.jpg",
+                    title:"",
+                    description:""
+                }
             ]
         }
     },
@@ -36,7 +77,7 @@ export default {
     components:{
       Header,
       Search,
-    //   Sort,
+      Scenic,
       Footer,
         },
 

@@ -28,22 +28,22 @@ import Footer from "../components/footer"
 export default {
     data(){
         return{
-            Iscolor:false,
-            Status:false,
+            Iscolor:true,
+            Status:true,
             // ClickList:["主页","景点","酒店","分享","攻略","关于"],
             BannerList:[
                 {
-                    show_image: "http://zengyl.dev.dxdc.net/travel_pic/pic/7.jpg",
+                    show_image: "http://zengyl.dev.dxdc.net/travel_pic/pic/1.jpg",
                     title: "Welcome to the travel",
                     content: "Now,you will have the best time to travel with us",
                 },
                 {
-                    show_image: "http://zengyl.dev.dxdc.net/travel_pic/pic/6.jpg",
+                    show_image: "http://zengyl.dev.dxdc.net/travel_pic/pic/2.jpg",
                     title: "The big big world",
                     content: "The happy happy you and me",
                 },
                 {
-                    show_image: "http://zengyl.dev.dxdc.net/travel_pic/pic/5.jpg",
+                    show_image: "http://zengyl.dev.dxdc.net/travel_pic/pic/4.jpg",
                     title: "Have Fun,baby",
                     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Performance takes a lot mass nutrition in the United States but as propaganda. Financing smile or a salad of mourning until a propaganda cartoon computer.",
                 }
@@ -69,13 +69,13 @@ export default {
                     },
                     {
                         number: "04",
-                        title_copy: "Amazing Tour",
-                        content_copy:"We help you to choose the best destination reservation consectetur adipisicing elit.Is held the wise, the smallest of them, for he fled to attain, by the law of Commodus."
+                        title_copy: "Travel sharing",
+                        content_copy:"If the first thing you plan on a trip is your meals, we feel you. It's pretty much at the top of every  travelers‘ must-do list, whether visiting America, Europe, Asia or beyond."
                     },
                     {
                         number: "05",
-                        title_copy: "Travel sharing",
-                        content_copy:"If the first thing you plan on a trip is your meals, we feel you. It's pretty much at the top of every  travelers‘ must-do list, whether visiting America, Europe, Asia or beyond."
+                        title_copy: "Amazing Tour",
+                        content_copy:"We help you to choose the best destination reservation consectetur adipisicing elit.Is held the wise, the smallest of them, for he fled to attain, by the law of Commodus."
                     },
                     {
                         number: "06",
@@ -90,7 +90,7 @@ export default {
                 des_click_copy:"All Destination",
                 list:[
                     {
-                    img: "http://zengyl.dev.dxdc.net/travel_pic/pic/7.jpg",
+                    img: "http://zengyl.dev.dxdc.net/travel_pic/pic/Chongqing.jpg",
                     name: "Chongqing",
                     description: "Chongqing, a mountain city, is also a river city, unlike the north of the rugged and the delicate jiangnan is too much, its natural pity is guarding a unique southwest of the Qingwan excellence.",
                     scenic: 5,
@@ -98,7 +98,7 @@ export default {
                     reviews:10,
                     },
                     {
-                    img: "http://zengyl.dev.dxdc.net/travel_pic/pic/4.jpg",
+                    img: "http://zengyl.dev.dxdc.net/travel_pic/pic/Nyingchi.jpg",
                     name: "Tibet Nyingchi",
                     description: "Clouds in the sky of Tibet Nyingchi, Qianshan dusk snow peach forest. Nyingchi boasts snow-capped mountains, flowers, clouds, streams, and scenery everywhere.",
                     scenic: 7,
@@ -106,7 +106,7 @@ export default {
                     reviews:18,
                     },
                     {
-                    img: "http://zengyl.dev.dxdc.net/travel_pic/pic/6.jpg",
+                    img: "https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/6bDcjYHc-1380x690.jpeg",
                     name: "Tokyo",
                     description: "Tokyo, a larger-than-life metropolis, always has a touch of tradition behind the bustling commercial streets and all kinds of fashionable buildings.",
                     scenic: 9,
@@ -215,26 +215,27 @@ export default {
         GuidesList:{
             GuideTitle:"TRIP IDEAS",
             GuideTitle_min:"Trip Ideas",
-            GuideDescription:"Not sure where to go next? We’ve got everything you need to inspire your next great getaway, from long weekend escapes in the U.S. to must-see cities in Europe to bucket-list adventures in Asia and beyond. Get packing.",
+            GuideDescription:"Not sure where to go next? We’ve got everything you need to inspire your next great getaway, from long weekend escapes in China to must-see cities in Europe to bucket-list adventures in Africa and beyond. Get packing.",
             GuideImg:"http://zengyl.dev.dxdc.net/travel_pic/pic/banner1.jpg",
             list:[
             {
-                theme:"The Coolest Things to Do in Chongqing Now,How relaxing it is",
-                theme_img:"http://zengyl.dev.dxdc.net/travel_pic/pic/1.jpg",
+                // theme:"The Coolest Things to Do in Ireland Now,How relaxing it is",
+                theme:"Where to Go in Ireland: The 5 Destinations You Must Visit to Relax.",
+                theme_img:"https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/bdXb-xIn-1380x1035.jpeg",
                 theme_copy:"",
                 day:5,
                 price:"¥8800"
             },
             {
-                theme:"11 Gorgeous Places in India That Have to Be Seen to Be Believed",
-                theme_img:"http://zengyl.dev.dxdc.net/travel_pic/pic/2.jpg",
+                theme:"6 Beautiful Places We're Dreaming Of Right Now",
+                theme_img:"https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/K6tdmpAu-1380x1035.jpeg",
                 theme_copy:"",
                 day:4,
                 price:"¥7600"
             },
             {
-                theme:"The Coolest Things to Do in Chongqing Now",
-                theme_img:"http://zengyl.dev.dxdc.net/travel_pic/pic/3.jpg",
+                theme:"11 Places to Visit Before It’s Too Late.To Do the Coolest Things Now",
+                theme_img:"https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/jM84bYgW-1380x1035.jpeg",
                 theme_copy:"",
                 day:7,
                 price:"¥12800"
@@ -246,8 +247,8 @@ export default {
             aboutTitle:"Frequently Asked Questions",
             list:[
                 {
-                    question:" Low Cost service is available or not ?",
-                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    question:"What is Travel?",
+                    answer:"Think of Travel as your well-traveled friend, the one you call when you need advice on where to go, where to stay, and what to do when you get there. We serve up stories and images to inspire your next adventure and then give you the tools you need to plan it. We also hook you up with some pretty sweet travel deals.",
                     showcontent:false,
                 },
                 {
@@ -256,18 +257,18 @@ export default {
                     showcontent:false,
                 },
                 {
-                    question:"Low Cost service is available or not ?",
+                    question:"Can I contribute to a future volume of Travel?",
                     answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
                     showcontent:false,
                 },
                 {
-                    question:"Low Cost service is available or not ?",
-                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    question:"I’d like to sponsor and/or advertise in the Travel.",
+                    answer:"If you feel there may be an opportunity to work together, we’d love to hear from you. As an independent publisher, we believe in staying true to our values and ethos, and want to work with those who share in the spirit of our magazine. If you have an idea of how we could work together please email us at ",
                     showcontent:false,
                 },
                 {
-                    question:"Low Cost service is available or not ?",
-                    answer:"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor",
+                    question:"I couldn’t find an answer to my question.",
+                    answer:"Please contact us at 2119037241@qq.com with your request accompanied with any relevant information.",
                     showcontent:false,
                 }
             ]

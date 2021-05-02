@@ -7,7 +7,11 @@
         <el-tab-pane label="" disabled></el-tab-pane>
         <el-tab-pane label="国内目的地" name="first">
             <Search :SearchList="SearchList1"/>
+            <!-- <div class="des">热门目的地</div> -->
+        <div class="hot">
             <div class="des">热门目的地</div>
+            <div class="more">更多<div class="el-icon-arrow-right"></div></div>
+        </div>
             <div class="flex">
                 <div class="photo" v-for="(item,index) in DesList1" :key="index">
                 <div class="image" @click="goscenic(item.destination)">
@@ -26,7 +30,11 @@
         </el-tab-pane>
         <el-tab-pane label="境外·港澳台目的地" name="second">
             <Search :SearchList="SearchList2"/>
+            <!-- <div class="des">Popular destinations</div> -->
+        <div class="hot">
             <div class="des">Popular destinations</div>
+            <div class="more">更多<div class="el-icon-arrow-right"></div></div>
+        </div>
             <div class="flex">
                 <div class="photo" v-for="(item,index) in DesList2" :key="index">
                 <div class="image" @click="goscenic(item.destination)">
@@ -170,18 +178,32 @@ export default {
 .line{
     height: 80px;
 }
-.des{
+.hot{
     padding: 0 5% 0 8%;
-    font-size: 26px;
-    font-weight: 600;
-    color: #636363;
     margin-top: 30px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+.des{
+    
+    font-size: 26px;
+    font-weight: 600;
+    color: #409EFF;
+    
 }
+.more{
+            font-size: 18px;
+            cursor: pointer;
+            padding-right: 70px;
+        }
+}
+
 .flex{
     display: flex;
     flex-wrap: wrap;
     padding: 0 8%;
+    margin-bottom: 20px;
   .photo{
     margin-top: 10px;
         .image{

@@ -36,6 +36,7 @@ export default {
     height: 790px;
     width: 100%;
     color: white;
+    // background-size: 100% 100%;
     .container {
         display: flex;
         flex-direction: column;
