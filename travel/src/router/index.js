@@ -12,6 +12,7 @@ import guides_detail from '../pages/guides_detail'
 import publish_guides from '../pages/publish_guides'
 import login from '../pages/login'
 import register from '../pages/register'
+import about from '../pages/about'
 
 
 
@@ -72,9 +73,9 @@ export default new Router({
       component: login
 },
 {
-  path: '/register',
-      name: 'register',
-      component: register
+  path: '/about',
+      name: 'about',
+      component: about
 }
   ]
 })
