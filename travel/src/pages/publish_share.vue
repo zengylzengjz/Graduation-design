@@ -7,8 +7,9 @@
                 <el-tab-pane label="" disabled></el-tab-pane>
                 <el-tab-pane label="发布分享" name="first">
                     <!-- <div class="description">上传图片</div> -->
-                    <el-upload
-                        class="upload-demo"
+                        
+                    <el-upload class="upload-demo"
+                    	on-change="false"
                         action="https://jsonplaceholder.typicode.com/posts/"
                         :on-preview="handlePreview"
                         :on-remove="handleRemove"
@@ -56,7 +57,8 @@ export default {
            Iscolor:true,
            Status:true,
            activeName: 'first',
-           fileList: [{name: 'travel.jpeg', url: 'https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/gvpne32F-1-1380x1035.jpeg'}],
+           fileList: [],
+        //    test:{name: 'travel.jpeg', url: 'https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/gvpne32F-1-1380x1035.jpeg'},
            input: '',
            textarea:''
        }
