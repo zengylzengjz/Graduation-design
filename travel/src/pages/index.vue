@@ -224,21 +224,21 @@ export default {
                 theme_img:"https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/bdXb-xIn-1380x1035.jpeg",
                 theme_copy:"",
                 day:5,
-                price:"¥8800"
+                price:"Europe"
             },
             {
                 theme:"6 Beautiful Places We're Dreaming Of Right Now",
                 theme_img:"https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/K6tdmpAu-1380x1035.jpeg",
                 theme_copy:"",
-                day:4,
-                price:"¥7600"
+                day:10,
+                price:"Global"
             },
             {
                 theme:"11 Places to Visit Before It’s Too Late.To Do the Coolest Things Now",
                 theme_img:"https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/jM84bYgW-1380x1035.jpeg",
                 theme_copy:"",
-                day:7,
-                price:"¥12800"
+                day:15,
+                price:"Global"
             },
         ]
         },

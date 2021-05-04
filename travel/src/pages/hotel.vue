@@ -163,6 +163,21 @@ export default {
             ],
             HotelList2:[
                 {
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel0.jpg',
+                    title: '三亚亚龙湾凯莱仙人掌度假酒店',
+                    address: '三亚 亚龙湾 吉阳区亚龙湾国家旅游度假区',
+                    addr:"地址：",
+                    money: '¥530',
+                    star:3,
+                    rate: 4.6,
+                    comment: '--6条评论',
+                    ticket:"24",
+                    ticketet:"剩余房间数：",
+                    qty:"预定数量",
+                    buy:"立即预定",
+                    description:"酒店背依巍巍青山连绵起伏，面呈龙潭湖的碧波悠悠。"
+                },
+                {
                     img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel2.jpg',
                     address: 'xxxxxxxx',
                     money: '¥280',

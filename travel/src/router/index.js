@@ -7,6 +7,10 @@ import scenic from '../pages/scenic'
 import scenic_detail from '../pages/scenic_detail'
 import hotel from '../pages/hotel'
 import hotel_detail from '../pages/hotel_detail'
+import publish_share from '../pages/publish_share'
+import guides_detail from '../pages/guides_detail'
+import login from '../pages/login'
+
 
 
 
@@ -44,6 +48,21 @@ export default new Router({
   path: '/hotel_detail',
       name: 'hotel_detail',
       component: hotel_detail
+},
+{
+  path: '/publish_share',
+      name: 'publish_share',
+      component: publish_share
+},
+{
+  path: '/guides_detail',
+      name: 'guides_detail',
+      component: guides_detail
+},
+{
+  path: '/login',
+      name: 'login',
+      component: login
 },
   ]
 })

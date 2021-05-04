@@ -82,40 +82,40 @@ export default {
             width1:[380,780,380,380,380,780,380],
             DesList1:[
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/9.jpg",
-                    destination:'测试',
-                    translate:'test'
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/gly.jpg",
+                    destination:'鼓浪屿',
+                    translate:'Gulangyu'
                 },
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/8.jpg",
-                    destination:'测试',
-                    translate:'test'
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/banner.jpg",
+                    destination:'重庆',
+                    translate:'Chongqing'
                 },
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/7.jpg",
-                    destination:'测试',
-                    translate:'test'
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/Nyingchi.jpg",
+                    destination:'灵芝',
+                    translate:'Nyingchi'
                 },
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/6.jpg",
-                    destination:'测试',
-                    translate:'test'
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/SD.jpg",
+                    destination:'色达',
+                    translate:'Sertar'
                 },
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/5.jpg",
-                    destination:'测试',
-                    translate:'test'
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/YD.jpg",
+                    destination:'亚丁',
+                    translate:'Yading'
                 },
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/4.jpg",
-                    destination:'测试',
-                    translate:'test'
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/sy.jpg",
+                    destination:'三亚',
+                    translate:'Sanya'
                 },
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/3.jpg",
-                    destination:'测试',
-                    translate:'test'
-                }
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/XJYL.jpg",
+                    destination:'伊犁',
+                    translate:'Ili'
+                },
             ],
             DesList2:[
                 {

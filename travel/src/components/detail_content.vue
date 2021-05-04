@@ -17,9 +17,20 @@
                     <div class="el-icon-map-location icon"></div>
                     <div class="address">{{Scenic.addr}}{{Scenic.address}}</div>
                 </div>
-                <div class="time">
+                <!-- <div class="time">
                     <div class="el-icon-timer icon"></div>
                     <div class="timer">{{Scenic.timeme}}{{Scenic.time}}</div>
+                </div> -->
+                <div class="block">
+                    <div class="el-icon-timer icon"></div>
+                    <!-- <p>组件值：{{ value }}</p> -->
+                    <el-date-picker
+                    v-model="value"
+                    type="daterange"
+                    start-placeholder="开始日期"
+                    end-placeholder="结束日期"
+                    :default-time="['00:00:00', '23:59:59']">
+                    </el-date-picker>
                 </div>
                 <div class="ticket">
                     <div class="el-icon-tickets icon"></div>
@@ -43,7 +54,8 @@ export default {
         return{
             money:'',
             symbol:'',
-            num: 1
+            num: 1,
+            value: ''
         }
     },
     props:['Scenic'],
@@ -134,6 +146,16 @@ export default {
                 .timer{
                     font-size: 15px;
                     color: #999;
+                }
+            }
+            .block{
+                display: flex;
+                margin-top: 25px;
+                font-size: 24px;
+                .icon{
+                    margin-right: 10px;
+                    padding-top: 6px;
+                    font-size: 28px;
                 }
             }
             .ticket{

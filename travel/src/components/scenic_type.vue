@@ -11,7 +11,7 @@
                         <div class="text2">{{item.text2}}</div>
                     </div>
                     <div class="detail">{{TypeList.detail}}</div>
-                    <div class="el-icon-arrow-right"></div>
+                    <div class="el-icon-arrow-right icon_right"></div>
                     <div class="ticket_money">{{item.money}}</div>
                     <div class="ticket_button">
                         <!-- <el-row> -->
@@ -151,7 +151,8 @@ padding-top: 20px;
     margin-top: 21px;
     // align-self: center;
 }
-.el-icon-arrow-right{
+
+.icon_right{
     color: #4da7b7;
     font-size: 12px;
     position: absolute;

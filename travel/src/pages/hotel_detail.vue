@@ -56,19 +56,19 @@ export default {
                         star:4.5,
                         name:"zengjz",
                         time:"2021-04-16",
-                        comment:"开心的旅程，让人记忆深刻的景点",
+                        comment:"酒店环境很好~交通也很方便",
                     },
                     {
                         star:5,
                         name:"zyl",
                         time:"2021-03-21",
-                        comment:"have fun!",
+                        comment:"住得很舒适，体验很好",
                     },
                     {
                         star:5,
                         name:"zjz",
                         time:"2021-03-18",
-                        comment:"开心，不虚此行",
+                        comment:"住得很开心~下次还会来~",
                     }
                 ]
             }

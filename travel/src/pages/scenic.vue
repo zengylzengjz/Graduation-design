@@ -28,7 +28,7 @@ export default {
             city:'',
             ScenicList:[
                 {
-                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/6.jpg",
+                    img:"http://zengyl.dev.dxdc.net/travel_pic/pic/cjsd.jpg",
                     title:"重庆长江索道",
                     description:"万里长江的一条空中走廊，俯瞰滚滚长江",
                     money:"¥50",
