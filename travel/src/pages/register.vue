@@ -3,21 +3,23 @@
     <Header :Iscolor="Iscolor" :Status="Status"/>
     <div class="line"></div>
     <div class="login-wrap">
-      <el-form class="login-container" :model="loginForm" status-icon :rules="rules" ref="ruleForm" label-width="100px">
-        <h1 class="title">Travel</h1>
+      <el-form class="login-container" :model="registerForm" status-icon :rules="rules" ref="ruleForm" label-width="100px">
+        <h1 class="title">Register</h1>
         <h4 class="msg">
           <div>{{msg}}</div>
         </h4>
         <el-form-item label="用户名" prop="username">
-          <el-input v-model.number="loginForm.username"></el-input>
+          <el-input v-model.number="registerForm.username"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input type="password" v-model="loginForm.password" autocomplete="off"></el-input>
+          <el-input type="password" v-model="registerForm.password" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="确认密码" prop="rePassword">
+          <el-input type="password" v-model="registerForm.rePassword" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="submitForm(loginForm)">提交</el-button>
+          <el-button type="primary" @click="submitForm(registerForm)">提交</el-button>
           <el-button @click="resetForm()">重置</el-button>
-          <el-button @click="registerForm()">注册</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -31,13 +33,15 @@ export default {
       Iscolor:true,
       Status:true,
       msg: '',
-      loginForm:{
-        username: "zjz",
-        password: "123456"
+      registerForm:{
+        username: "",
+        password: "",
+        rePassword: ""
       },
       rules: {
         username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+        rePassword: [{ required: true, message: '请再次输入密码', trigger: 'blur' }]
       }
     }
 
@@ -48,35 +52,28 @@ export default {
   methods:{
     submitForm: function(data){
       // doLogin validate
-      if(this.loginForm.username === "zjz"){
-        if(this.loginForm.password === "123456"){
-
-          //登录成功
-          let routeUrl = this.$router.resolve({
-            path: "/",
-          });
-          window.open(routeUrl.href, '_self');
-
-
-
-        }else{
-          this.msg = "密码错误"
-        }
-      }else{
-        this.msg = "用户名不存在";
+      if(this.registerForm.username === ''){
+        this.msg = '请输入用户名'
+        return
       }
+
+      if(this.registerForm.password === ''){
+        this.msg = '请输入密码'
+        return
+      }
+
+      if(this.registerForm.password !== this.registerForm.rePassword){
+        this.msg = '两次密码不正确'
+        return
+      }
+
+
 
     },
     resetForm: function(data){
-      this.loginForm.username = ''
-      this.loginForm.password = ''
-
-    },
-    registerForm: function(data){
-      let routeUrl = this.$router.resolve({
-        path: "/register",
-      });
-      window.open(routeUrl.href, '_self');
+      this.registerForm.username = ''
+      this.registerForm.password = ''
+      this.registerForm.rePassword = ''
 
     }
   }

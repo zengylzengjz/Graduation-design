@@ -10,6 +10,7 @@ import hotel_detail from '../pages/hotel_detail'
 import publish_share from '../pages/publish_share'
 import guides_detail from '../pages/guides_detail'
 import login from '../pages/login'
+import register from '../pages/register'
 
 
 
@@ -64,5 +65,10 @@ export default new Router({
       name: 'login',
       component: login
 },
+{
+  path: '/register',
+      name: 'register',
+      component: register
+}
   ]
 })
