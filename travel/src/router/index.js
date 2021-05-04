@@ -9,6 +9,7 @@ import hotel from '../pages/hotel'
 import hotel_detail from '../pages/hotel_detail'
 import publish_share from '../pages/publish_share'
 import guides_detail from '../pages/guides_detail'
+import publish_guides from '../pages/publish_guides'
 import login from '../pages/login'
 
 
@@ -58,6 +59,11 @@ export default new Router({
   path: '/guides_detail',
       name: 'guides_detail',
       component: guides_detail
+},
+{
+  path: '/publish_guides',
+      name: 'publish_guides',
+      component: publish_guides
 },
 {
   path: '/login',
