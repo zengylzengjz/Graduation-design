@@ -85,9 +85,9 @@
                    <div class="form-group col-md-12">
                      <textarea rows="6" name="message" class="form-control" id="description" placeholder="Your Message" required="required"></textarea>
                    </div>
-                   <div class="col-md-12">
+                   <div class="col-md-12" >
                      <div class="actions text-left">
-                       <input type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-lg btn-contact-bg" title="Submit Your Message!">
+                       <input @click="submit()" type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-lg btn-contact-bg" title="Submit Your Message!">
                      </div>
                    </div>
                  </div>
@@ -98,23 +98,23 @@
            <div class="col-lg-5 col-sm-12 col-xs-12 d-block mx-auto">
              <div class="contact_address text-left">
                <div class="single-contact-info">
-                 <i class="iconfont icon-map"></i>
-                 <p>2369 Robinson Lane Jackson<br> OH 45640</p>
+                 <i class="el-icon-user-solid"></i>
+                 <p>ZengYanling 2017051603011<br>CQNU</p>
                </div>
 
                <div class="single-contact-info">
-                 <i class="icofont-headphone-alt"></i>
+                 <i class="el-icon-phone"></i>
                  <p>
-                   (+1) 740-395-3829<br>
-                   (+1) 740-982-9821
+                   (+86) 18875219087<br>
+                   (+86) 13541534749
                  </p>
                </div>
 
                <div class="single-contact-info">
-                 <i class="icofont-ui-email"></i>
+                 <i class="el-icon-s-promotion"></i>
                  <p>
-                   help@Laveria.com<br>
-                   info@Laveria.com
+                   2119037241@qq.com<br>
+                   2119037241@qq.com
                  </p>
                </div>
 
@@ -140,6 +140,9 @@ export default {
     },
     components:{
        Header
+    },
+    methods: {
+      // 
     }
 }
 </script>

@@ -2,10 +2,10 @@
     <div class="destination">
         <div class="title">{{DestinationList.des_title_copy}}</div>
         <div class="content">{{DestinationList.des_content_copy}}</div>
-        <div class="click">{{DestinationList.des_click_copy}}</div>
+        <div class="click" @click="goClick">{{DestinationList.des_click_copy}}</div>
         <div class="dec">
             <div class="list" v-for="(item,index) in DestinationList.list.slice(0,3)" :key="index" >
-            <div class="image">
+            <div class="image" @click="goscenic(item.name)">
                 <div class="img" :style="{'background-image':'url('+item.img+')'}"></div>
                 <div class="img_dec">
                     <div class="img_content">
@@ -52,6 +52,19 @@ export default {
         // let arr =this.DestinationList.list;
         // arr=[...arr,...this.DestinationList.list];
         // console.log(arr,"arr");
+    },
+    methods: {
+        goClick(){
+                this.$router.push({
+                path: "destination" //动态跳转
+      })
+        },
+        goscenic(des){
+        this.$router.push({
+        name: 'scenic',
+        params: {destination:des},
+      })
+      },
     }
 }
 </script>
@@ -74,6 +87,7 @@ export default {
         color: #508784;
         padding-bottom: 20px;
         text-decoration: underline;
+        cursor: pointer;
     }
     .dec{
         display: flex;
@@ -81,6 +95,7 @@ export default {
         .list{
         
         .image{
+            cursor: pointer;
             margin-left: 30px;
             .img{
             width: 25rem;
@@ -107,6 +122,7 @@ export default {
             
         }
         .detail{
+                cursor: pointer;
                 font-size: 14px;
                 padding: 0 13px;
                 color: #757575;
@@ -115,6 +131,7 @@ export default {
                 text-overflow:ellipsis;
             }
             .recommend{
+            cursor: pointer;
                 text-align: left;
                 margin: 20px 20px;
                 display: flex;

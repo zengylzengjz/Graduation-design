@@ -22,7 +22,7 @@
                     </div>
                     <div class="recommend">
                         <div class="money">{{item.money}}
-                            <span>起</span>
+                            <span>{{item.qi}}</span>
                         </div>
                     </div>
                     <div class="mask"></div>

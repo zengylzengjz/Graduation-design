@@ -16,7 +16,7 @@
 export default {
     props:['ShareList'],
     mounted(){
-        console.log(this.ShareList);
+        // console.log(this.ShareList);
     }
 }
 </script>

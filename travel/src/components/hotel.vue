@@ -4,7 +4,7 @@
     <div class="content">{{HotelList.hotel_content_copy}}</div>
     <div class="detail">
         <div class="list" v-for="(item,index) in HotelList.list" :key="index">
-            <div class="image" :style="{'background-image':'url('+item.img+')',height:height[index]+'px'}">
+            <div @click="gohotel_detail(item)" class="image" :style="{'background-image':'url('+item.img+')',height:height[index]+'px'}">
                     <div class="img"  :style="{height:height[index]+'px'}">
                     <div class="copy">
                         <div class="el-icon-location-outline addr">
@@ -24,7 +24,7 @@
     </div>
     <div class="button">
             <el-row>
-                <el-button type="success">View All Hotel ➡️</el-button>
+                <el-button type="success" @click="goClick">View All Hotel ➡️</el-button>
             </el-row>
     
     </div>
@@ -41,6 +41,20 @@ export default {
     props:['HotelList'],
     mounted(){
         // console.log(this.HotelList);
+    },
+    methods: {
+        goClick(){
+                this.$router.push({
+                path: "hotel" //动态跳转
+      })
+            
+        },
+        gohotel_detail(item){
+            this.$router.push({
+            name: 'hotel_detail',
+            params: {hotel_detail: item},
+      })
+        }
     }
 }
 </script>

@@ -32,7 +32,7 @@
                     <el-card>
                         <div class="dis_flex">
                             <div class="el-icon-location-outline icon"></div>
-                            <el-input v-model="input" placeholder="请输入地点" ></el-input>
+                            <el-input v-model="input1" placeholder="请输入地点" ></el-input>
                         </div>
                         <div class="con_flex">
                             <div class="el-icon-notebook-1 icon"></div>
@@ -40,7 +40,7 @@
                             type="textarea"
                             :rows="10"
                             placeholder="请输入内容"
-                            v-model="textarea">
+                            v-model="textarea1">
                             </el-input>
                             <el-upload class="con_image"
                             onchange="false"
@@ -60,7 +60,7 @@
                     <el-card>
                         <div class="dis_flex">
                             <div class="el-icon-location-outline icon"></div>
-                            <el-input v-model="input" placeholder="请输入地点" ></el-input>
+                            <el-input v-model="input2" placeholder="请输入地点" ></el-input>
                         </div>
                         <div class="con_flex">
                             <div class="el-icon-notebook-1 icon"></div>
@@ -68,7 +68,7 @@
                             type="textarea"
                             :rows="10"
                             placeholder="请输入内容"
-                            v-model="textarea">
+                            v-model="textarea2">
                             </el-input>
                             <el-upload class="con_image"
                             onchange="false"
@@ -88,7 +88,7 @@
                     <el-card>
                         <div class="dis_flex">
                             <div class="el-icon-location-outline icon"></div>
-                            <el-input v-model="input" placeholder="请输入地点" ></el-input>
+                            <el-input v-model="input3" placeholder="请输入地点" ></el-input>
                         </div>
                         <div class="con_flex">
                             <div class="el-icon-notebook-1 icon"></div>
@@ -96,7 +96,7 @@
                             type="textarea"
                             :rows="10"
                             placeholder="请输入内容"
-                            v-model="textarea">
+                            v-model="textarea3">
                             </el-input>
                             <el-upload class="con_image"
                             onchange="false"
@@ -113,6 +113,25 @@
                     </el-card>
                     </el-timeline-item>
                 </el-timeline>
+                <div >
+                    <el-row style="margin-left:60px;margin-bottom: 40px" >
+                    <el-button type="primary" @click="check()" >确认发布</el-button>
+                    <el-dialog
+                    title="提示"
+                    :visible.sync="dialogVisible1"
+                    width="30%"
+                    :before-close="handleClose">
+                    <span>确定要发布该旅游攻略吗？</span>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVisible1 = false">取 消</el-button>
+                        <el-button type="primary" @click="refresh(),dialogVisible1 = false">确 定</el-button>
+                    </span>
+                </el-dialog>
+                    </el-row>
+                </div>
+                
+                
+
             </div>
         </div>
     </div>
@@ -122,10 +141,17 @@ import Header from "../components/header"
 export default {
     data(){
         return{
+            login_in:window.login_in,
+            dialogVisible1: false,
             Iscolor:true,
             Status:true,
             input: '',
-            textarea:'',
+            input1: '',
+            textarea1:'',
+            input2: '',
+            textarea2:'',
+            input3: '',
+            textarea3:'',
             dialogImageUrl: '',
             dialogVisible: false,
             PartList:["Part 1","Part 2","Part 3"],
@@ -153,7 +179,38 @@ export default {
       handlePictureCardPreview(file) {
         // this.dialogImageUrl = file.url;
         // this.dialogVisible = true;
-      }
+      },
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
+      check(){
+        if(!this.login_in){
+            alert("请先登录本系统！");
+            return;
+        }
+        if(!this.input||!this.textarea1||!this.input1||!this.input2||!this.input3||!this.textarea2||!this.textarea3){
+            // console.log(this.dialogVisible);
+            alert("请完善发布内容！");
+            return;
+        }
+        else this.dialogVisible1=true;
+        
+        
+    },
+    refresh(){
+        this.input="";
+        this.input1="";
+        this.input2="";
+        this.input3="";
+        this.textarea1="";
+        this.textarea2="";
+        this.textarea3="";
+        
+    }
     }
 }
 </script>

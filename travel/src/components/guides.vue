@@ -28,7 +28,7 @@
                 <div class="content">{{GuidesList.GuideDescription}}</div>
             </div>
         </div>
-        <div class="idea">
+        <div class="idea" @click="goClick">
             <div class="trip" v-for="(item,index) in GuidesList.list" :key="index">
                 <div class="trip_single">
                     <div class="image" :style="{'background-image':'url('+item.theme_img+')'}" :class="index<2?'margin':''">
@@ -72,6 +72,14 @@ export default {
     },
     mounted(){
         // console.log(this.GuidesList);
+    },
+    methods: {
+        goClick(){
+                this.$router.push({
+                path: "guides_detail" //动态跳转
+      })
+            
+        }
     }
 }
 </script>

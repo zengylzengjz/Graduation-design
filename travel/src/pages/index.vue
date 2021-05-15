@@ -28,8 +28,8 @@ import Footer from "../components/footer"
 export default {
     data(){
         return{
-            Iscolor:true,
-            Status:true,
+            Iscolor:false,
+            Status:false,
             // ClickList:["主页","景点","酒店","分享","攻略","关于"],
             BannerList:[
                 {

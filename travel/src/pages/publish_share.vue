@@ -9,7 +9,7 @@
                     <!-- <div class="description">上传图片</div> -->
                         
                     <el-upload class="upload-demo"
-                    	on-change="false"
+                    	:on-change=false
                         action="https://jsonplaceholder.typicode.com/posts/"
                         :on-preview="handlePreview"
                         :on-remove="handleRemove"
@@ -36,11 +36,22 @@
                     </div>
                     <div class="button">
                         <el-row>
-                        <el-button type="primary">确认发布</el-button>
+                        <el-button type="primary" @click="check()" >确认发布</el-button>
+                        <el-dialog
+                            title="提示"
+                            :visible.sync="dialogVisible"
+                            width="30%"
+                            :before-close="handleClose">
+                            <span>确定要发布本次旅游分享吗？</span>
+                            <span slot="footer" class="dialog-footer">
+                                <el-button @click="dialogVisible = false">取 消</el-button>
+                                <el-button type="primary" @click="refresh(),dialogVisible = false">确 定</el-button>
+                            </span>
+                        </el-dialog>
                         </el-row>
                     </div>
                 </el-tab-pane>
-                <el-tab-pane label="个人发布" name="second">配置管理</el-tab-pane>
+                <el-tab-pane label="个人发布" name="second">暂无信息</el-tab-pane>
             </el-tabs>
         </div>
         <Footer />
@@ -54,13 +65,17 @@ import Footer from "../components/footer"
 export default {
    data(){
        return {
+           login: 0,
+           login_in:window.login_in,
            Iscolor:true,
            Status:true,
            activeName: 'first',
            fileList: [],
         //    test:{name: 'travel.jpeg', url: 'https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/gvpne32F-1-1380x1035.jpeg'},
            input: '',
-           textarea:''
+           textarea:'',
+           test:false,
+           dialogVisible: false
        }
    } ,
    methods: {
@@ -72,7 +87,36 @@ export default {
       },
       handlePreview(file) {
         // console.log(file);
-      }
+      },
+      handleClose(done) {
+        this.$confirm('确认放弃发布吗？')
+          .then(_ => {
+            done();
+            // location.reload();
+          })
+          .catch(_ => {});
+      },
+    check(){
+        if(!this.login_in){
+            alert("请先登录本系统！");
+            return;
+        }
+        if(!this.input||!this.textarea){
+            // console.log(this.dialogVisible);
+            alert("请完善发布内容！");
+            return;
+        }
+        else this.dialogVisible=true;
+        
+        
+    },
+    refresh(){
+        // this.login=1;
+        // location.reload();
+        this.input="";
+        this.textarea="";
+        
+    }
    },
    components:{
       Header,

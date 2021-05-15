@@ -10,66 +10,49 @@
             <div class="recommend">
             <div class="des">酒店推荐</div>
             <div class="bar">
-                <!-- <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-                    <el-menu-item index="1">北京</el-menu-item>
-                    <el-menu-item index="2">上海</el-menu-item>
-                    <el-menu-item index="3">广州</el-menu-item>
-                    <el-menu-item index="4">深圳</el-menu-item>
-                    <el-menu-item index="5">成都</el-menu-item>
-                    <el-menu-item index="6">重庆</el-menu-item>
-                    <el-menu-item index="7">西安</el-menu-item>
-                    <el-menu-item index="8">长沙</el-menu-item>
-                    <el-menu-item index="9">厦门</el-menu-item>
-                    <el-menu-item index="10">杭州</el-menu-item>
-
-                    <el-submenu index="11">
-                        <template slot="title">更多</template>
-                    </el-submenu>
-                </el-menu> -->
                 <el-tabs v-model="activeName2" @tab-click="handleClick">
-                    <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
-                    <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-                    <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-                    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+                    <el-tab-pane label="三亚" name="1th">
+                         <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="上海" name="2th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="广州" name="3th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="深圳" name="4th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="成都" name="5th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="重庆" name="6th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="西安" name="7th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="长沙" name="8th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="厦门" name="9th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="杭州" name="10th">
+                        <Hotel :HotelList="HotelList1"/>
+                    </el-tab-pane>
+                    <el-tab-pane label="更多" name="11th"><br><br>更多内容正在开放中<br><br><br>敬请期待<br><br><br><br></el-tab-pane>
+
+
+
+
+                     
                 </el-tabs>
             </div>
             </div>
-        <Hotel :HotelList="HotelList1"/>
-            <!-- <div class="flex">
-                <div class="photo" v-for="(item,index) in HotelList1" :key="index">
-                <div class="image" @click="goscenic(item.destination)">
-                    <img :src="item.img" alt="" class="img"  style="margin-right: 20px" :style="{width:width1[index]+'px'}">
-                    <div class="city">{{item.destination}}</div>
-                    <div class="translate">——{{item.translate}}——</div>
-                    <div class="mask" :style="{width:width1[index]+'px'}">
-                        <div class="font">
-                            <div>去看看</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div> -->
-            
         </el-tab-pane>
         <el-tab-pane label="境外·港澳台酒店" name="second">
         <Hotel :HotelList="HotelList2"/>
-            <!-- <div class="des">Popular destinations</div> -->
-            <!-- <div class="flex">
-                <div class="photo" v-for="(item,index) in DesList2" :key="index">
-                <div class="image" @click="goscenic(item.destination)">
-                    <img :src="item.img" alt="" class="img"  style="margin-right: 20px" :style="{width:width1[index]+'px'}">
-                    <div class="city">{{item.destination}}</div>
-                    <div class="translate">——{{item.translate}}——</div>
-                    <div class="mask" :style="{width:width1[index]+'px'}">
-                        <div class="font">
-                            <div>Go and See</div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            </div> -->
-            
         </el-tab-pane>
     </el-tabs>
 </div>
@@ -87,9 +70,9 @@ export default {
             Iscolor:true,
             Status:true,
             activeName1: 'first',
-            activeName2: 'first',
+            activeName2: '1th',
 
-            // activeIndex: '1',
+            activeIndex: '1',
             
             SearchList1:{
                 content: '请输入酒店名称',
@@ -99,69 +82,8 @@ export default {
                 content: 'Please enter a hotel name',
                 search:'Search'
             },
-            HotelList1:{}
+            HotelList1:
             [
-                {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg',
-                    title: '维也纳酒店',
-                    address: 'xxxxxxxx',
-                    addr:"地址：",
-                    money: '¥280',
-                    star:3,
-                    rate: 4.6,
-                    comment: '--6条评论',
-                    ticket:"24",
-                    ticketet:"剩余房间数：",
-                    qty:"预定数量",
-                    buy:"查看详情"
-                },
-                {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg',
-                    name: 'Jinjianginn锦江之星',
-                    address: 'xxxxxxxx',
-                    money: '¥280',
-                    star:3.5,
-                    rate: 4.6,
-                    comment: '--6条评论',
-                },
-                {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg',
-                    name:'汉庭酒店',
-                    address: 'xxxxxxxx',
-                    money: '¥280',
-                    star:3,
-                    rate: 4.6,
-                    comment: '--6条评论',
-                },
-                {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg',
-                    name:'全季酒店',
-                    address: 'xxxxxxxx',
-                    money: '¥280',
-                    star:4,
-                    rate: 4.6,
-                    comment: '--6条评论',
-                },
-                {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg',
-                    name:'亚朵酒店',
-                    address: 'xxxxxxxx',
-                    money: '¥280',
-                    star:4.5,
-                    rate: 4.6,
-                    comment: '--6条评论',
-                },
-                {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg',
-                    name:'HNA海航酒店',
-                    address: 'xxxxxxxx',
-                    money: '¥280',
-                    star:3,
-                    rate: 4.6,
-                    comment: '--6条评论',
-                }
-            ],
-            HotelList2:[
                 {
                     img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel0.jpg',
                     title: '三亚亚龙湾凯莱仙人掌度假酒店',
@@ -179,6 +101,68 @@ export default {
                 },
                 {
                     img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel2.jpg',
+                    name: 'Jinjianginn锦江之星',
+                    address: 'xxxxxxxx',
+                    money: '¥280',
+                    star:3.5,
+                    rate: 4.6,
+                    comment: '--6条评论',
+                },
+                {
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel3.jpg',
+                    name:'汉庭酒店',
+                    address: 'xxxxxxxx',
+                    money: '¥280',
+                    star:3,
+                    rate: 4.6,
+                    comment: '--6条评论',
+                },
+                {
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel4.jpg',
+                    name:'全季酒店',
+                    address: 'xxxxxxxx',
+                    money: '¥280',
+                    star:4,
+                    rate: 4.6,
+                    comment: '--6条评论',
+                },
+                {
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel5.jpg',
+                    name:'亚朵酒店',
+                    address: 'xxxxxxxx',
+                    money: '¥280',
+                    star:4.5,
+                    rate: 4.6,
+                    comment: '--6条评论',
+                },
+                {
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel6.jpg',
+                    name:'HNA海航酒店',
+                    address: 'xxxxxxxx',
+                    money: '¥280',
+                    star:3,
+                    rate: 4.6,
+                    comment: '--6条评论',
+                }
+            ],
+            HotelList2:[
+                {
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel0.jpg',
+                    title: '亚龙湾凯莱仙人掌度假酒店',
+                    address: '亚龙湾 吉阳区亚龙湾国家旅游度假区',
+                    addr:"地址：",
+                    money: '¥530',
+                    star:3,
+                    rate: 4.6,
+                    comment: '--6条评论',
+                    ticket:"24",
+                    ticketet:"剩余房间数：",
+                    qty:"预定数量",
+                    buy:"立即预定",
+                    description:"酒店背依巍巍青山连绵起伏，面呈龙潭湖的碧波悠悠。"
+                },
+                {
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel1.jpg',
                     address: 'xxxxxxxx',
                     money: '¥280',
                     star:4,
@@ -194,7 +178,7 @@ export default {
                     comment: '--6条评论',
                 },
                 {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel2.jpg',
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel6.jpg',
                     address: 'xxxxxxxx',
                     money: '¥280',
                     star:3,
@@ -202,7 +186,7 @@ export default {
                     comment: '--6条评论',
                 },
                 {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel2.jpg',
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel4.jpg',
                     address: 'xxxxxxxx',
                     money: '¥280',
                     star:3,
@@ -210,21 +194,14 @@ export default {
                     comment: '--6条评论',
                 },
                 {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel2.jpg',
+                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel5.jpg',
                     address: 'xxxxxxxx',
                     money: '¥280',
                     star:3,
                     rate: 4.6,
                     comment: '--6条评论',
                 },
-                {
-                    img: 'http://zengyl.dev.dxdc.net/travel_pic/pic/hotel2.jpg',
-                    address: 'xxxxxxxx',
-                    money: '¥280',
-                    star:3,
-                    rate: 4.6,
-                    comment: '--6条评论',
-                }
+                
             ]
         }
     },
@@ -234,7 +211,11 @@ export default {
       },
       handleSelect(key, keyPath) {
         // console.log(key, keyPath);
-      }
+      },
+      
+    },
+    mounted(){
+        document.body.scrollTop = document.documentElement.scrollTop = 0
     },
     components:{
       Header,
@@ -259,6 +240,8 @@ export default {
     font-size: 20px;
     font-weight: 600;
     color: #636363;
+    margin-left: 60px;
+    margin-right: 40px;
     }
     .bar{
         margin-top:30px;

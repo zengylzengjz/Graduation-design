@@ -73,6 +73,11 @@ export default new Router({
       component: login
 },
 {
+  path: '/register',
+      name: 'register',
+      component: register
+},
+{
   path: '/about',
       name: 'about',
       component: about

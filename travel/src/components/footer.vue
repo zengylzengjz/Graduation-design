@@ -11,7 +11,7 @@
         <div class="module2">
             <div class="title">{{FooterList.module2.title}}</div>
             <div class="content" v-for="(item,index) in FooterList.module2.content" :key="index">
-                <div class="item">{{item}}</div>
+                <div class="item" @click="goClick(item.click)">{{item.name}}</div>
                 <div class="el-icon-arrow-right"></div>
             </div>
         </div>
@@ -50,7 +50,31 @@ export default {
                 },
                 module2:{
                     title:"Links",
-                    content:["Home","Scenic","Hotel","Share","Strategy","About"],
+                    content:[{
+                        name:"Home",
+                        click:"/",
+                    },
+                    {
+                        name:"Scenic",
+                        click:"destination",
+                    },
+                    {
+                        name:"Hotel",
+                        click:"hotel",
+                    },
+                    {
+                        name:"Share",
+                        click:"publish_share",
+                    },
+                    {
+                        name:"Strategy",
+                        click:"publish_guides",
+                    },
+                    {
+                        name:"About",
+                        click:"about",
+                    },
+                    ],
                 },
                 module3:{
                     list:[
@@ -78,6 +102,17 @@ export default {
         }
     },
     props:[''],
+    methods:{
+        goClick(name){
+            console.log(this.$route.path,name);
+            if(this.$route.path !== "/"+name){
+                this.$router.push({
+                path: name //动态跳转
+      })
+            }
+            
+        }
+    }
 }
 </script>
 <style scoped lang="less">
@@ -135,6 +170,7 @@ export default {
             margin-bottom: 20px;
             display: flex;
             border-bottom: 1px solid rgba(100,100,100,0.2);
+            cursor: pointer;
             .item{
                 padding-left: 5px;
             }

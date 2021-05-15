@@ -41,7 +41,8 @@ export default {
                     ticket:"88",
                     ticketet:"剩余票数：",
                     qty:"购买数量",
-                    buy:"立即预定"
+                    buy:"立即预定",
+                    qi:"起"
                 },
                 {
                     img:"http://zengyl.dev.dxdc.net/travel_pic/pic/5.jpg",
@@ -73,6 +74,7 @@ export default {
     },
     mounted(){
         this.city=this.$route.params.destination;
+        document.body.scrollTop = document.documentElement.scrollTop = 0
     },
     components:{
       Header,
