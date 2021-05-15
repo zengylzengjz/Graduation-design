@@ -15,9 +15,9 @@
                 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
                     <el-submenu index="2">
                         <template slot="title" >个人中心</template>
-                        <el-menu-item index="2-1">我的订单</el-menu-item>
-                        <el-menu-item index="2-2">我的发布</el-menu-item>
-                        <el-menu-item index="2-3">个人资料</el-menu-item>
+                        <el-menu-item index="2-1" @click="goTo(sort1)">我的订单</el-menu-item>
+                        <el-menu-item index="2-2" @click="goTo(sort2)">我的发布</el-menu-item>
+                        <el-menu-item index="2-3" @click="goTo(sort3)">个人资料</el-menu-item>
                         <el-menu-item index="2-4" @click="loginOut">退出登录</el-menu-item>
                     </el-submenu>
                 </el-menu>
@@ -34,8 +34,8 @@ export default {
             istrue:this.Iscolor,
             ClickList:[
                 {name:"主页",click:"/"},
-                {name:"酒店",click:"hotel"},
                 {name:"景点",click:"destination"},
+                {name:"酒店",click:"hotel"},
                 {name:"分享",click:"publish_share"},
                 {name:"攻略",click:"publish_guides"},
                 {name:"关于",click:"about"}
@@ -43,6 +43,9 @@ export default {
                 login:"login",
                 login_in:window.login_in,
                 activeIndex: '2',
+                sort1:"first",
+                sort2:"second",
+                sort3:"third"
         }
     },
     mounted(){
@@ -86,6 +89,17 @@ export default {
       loginOut() {
           window.login_in=0;
           location.reload();
+      },
+      goTo(item){
+        //   console.log(item);
+          if(this.$route.path !== "/personal"){
+          this.$router.push({
+              name:"personal",
+              params:{
+                  test:item
+              }
+          })
+          }
       }
     }
 }

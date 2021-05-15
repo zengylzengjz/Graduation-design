@@ -78,6 +78,9 @@ export default {
         this.Scenic=this.$route.params.hotel_detail;
         // console.log(this.scenic,"test");
     },
+    mounted(){
+        document.body.scrollTop = document.documentElement.scrollTop = 0
+    },
     components:{
       Header,
       Content,

@@ -41,7 +41,7 @@
                     <div class="des">{{Scenic.qty}}</div>
                     <el-input-number v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>
                     <el-row class="button">
-                    <el-button type="primary">{{Scenic.buy}}</el-button>
+                    <el-button type="primary" @click="open">{{Scenic.buy}}</el-button>
                     </el-row>
                 </div>
             </div>
@@ -55,7 +55,8 @@ export default {
             money:'',
             symbol:'',
             num: 1,
-            value: ''
+            value: '',
+            login_in:window.login_in,
         }
     },
     props:['Scenic'],
@@ -69,6 +70,27 @@ export default {
     methods: {
       handleChange(tab, event) {
         // console.log(tab, event);
+      },
+      open() {
+         if(!this.login_in){
+             alert("请先登录本系统！")
+             return;
+         } 
+        this.$confirm('确定要预定吗?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '预定成功!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消'
+          });          
+        });
       }
     }
 }

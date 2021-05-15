@@ -1,5 +1,5 @@
 <template>
-   <div>123
+   <div>
        <Header :Iscolor="Iscolor" :Status="Status"/>
         <div class="line"></div>
 

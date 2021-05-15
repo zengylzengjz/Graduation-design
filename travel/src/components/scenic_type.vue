@@ -72,7 +72,8 @@ export default {
     data(){
         return{
             activeName: 'first',
-            value: 3.7
+            value: 3.7,
+            login_in:window.login_in,
         }
     },
     props:['TypeList','Scenic'],
@@ -81,19 +82,23 @@ export default {
         // console.log(tab, event);
       },
       open() {
-        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+         if(!this.login_in){
+             alert("请先登录本系统！")
+             return;
+         } 
+        this.$confirm('确定要预定吗?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
           this.$message({
             type: 'success',
-            message: '删除成功!'
+            message: '预定成功!'
           });
         }).catch(() => {
           this.$message({
             type: 'info',
-            message: '已取消删除'
+            message: '已取消'
           });          
         });
       }
